@@ -72,4 +72,5 @@ Good luck!
 
 ## Resources
 
-- [npm](https://npmjs.org)
+- [window.requestAnimationFrame()](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame)
+- [setInterval()](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval)
