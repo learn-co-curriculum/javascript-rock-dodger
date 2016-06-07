@@ -9,6 +9,7 @@
   background-color: #111;
   height: 400px;
   margin: 0 auto;
+  overflow: hidden;
   position: relative;
   text-align: center;
   width: 400px;

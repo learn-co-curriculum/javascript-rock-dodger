@@ -1,14 +1,21 @@
+/**
+ * Don't change these constants!
+ */
 const DODGER = document.getElementById('dodger')
 const GAME = document.getElementById('game')
 const GAME_HEIGHT = 400
 const GAME_WIDTH = 400
 const LEFT_ARROW = 37 // use e.which!
 const RIGHT_ARROW = 39 // use e.which!
+const ROCKS = []
 const START = document.getElementById('start')
 
-const ROCKS = []
-
 var gameInterval = null
+
+/**
+ * Be aware of what's above this line,
+ * but all of your work should happen below.
+ */
 
 function checkCollision(rock) {
   // implement me!
@@ -50,6 +57,7 @@ function createRock(x) {
   rock.className = 'rock'
   rock.style.left = `${x}px`
 
+  // Hmmm, why would we have used `var` here?
   var top = 0
 
   rock.style.top = top
@@ -88,6 +96,9 @@ function createRock(x) {
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision
   ROCKS.push(rock)
+
+  // Finally, return the rock element you've created
+  return rock
 }
 
 /**
@@ -97,14 +108,6 @@ function createRock(x) {
  * Finally, alert "YOU LOSE!" to the player.
  */
 function endGame() {
-}
-
-/**
- * @param {string} p The position property
- * @returns {number} The position as an integer (without 'px')
- */
-function positionToInteger(p) {
-  return parseInt(p.split('px')[0]) || 0
 }
 
 function moveDodger(e) {
@@ -132,6 +135,14 @@ function moveDodgerRight() {
    * This function should move DODGER to the right
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
+}
+
+/**
+ * @param {string} p The position property
+ * @returns {number} The position as an integer (without 'px')
+ */
+function positionToInteger(p) {
+  return parseInt(p.split('px')[0]) || 0
 }
 
 function start() {
