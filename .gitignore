@@ -44,4 +44,4 @@ package-lock.json
 .results.json
 
 # Learn-specific solutions
-*.solution.*
+# *.solution.*
