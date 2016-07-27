@@ -1,4 +1,5 @@
 describe('Rock Dodger', () => {
+<<<<<<< HEAD
   let _alert
   before(function(){
     _alert = window.alert
@@ -10,6 +11,12 @@ describe('Rock Dodger', () => {
     window.alert = _alert
     _alert = null
   })
+=======
+  afterEach(function() {
+    expect.restoreSpies()
+  })
+
+>>>>>>> parent of ef1bdd0... Make tests nicer
   describe('checkCollision(rock)', () => {
     /**
      * DODGER starts out at left = 180px
