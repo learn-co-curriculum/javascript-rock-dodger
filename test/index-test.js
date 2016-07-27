@@ -1,4 +1,15 @@
 describe('Rock Dodger', () => {
+  let _alert
+  before(function(){
+    _alert = window.alert
+
+    window.alert = () => {}
+  })
+
+  after(function() {
+    window.alert = _alert
+    _alert = null
+  })
   describe('checkCollision(rock)', () => {
     /**
      * DODGER starts out at left = 180px
