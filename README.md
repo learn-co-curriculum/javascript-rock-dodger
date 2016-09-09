@@ -64,7 +64,7 @@ Well, it _should_ be able to move only left and right — we'll need to implemen
 
 Now open `index.js`. You'll see that we've defined a few functions for you, but we've left much of the file blank.
 
-We've left enough comments to get you started, though, and we've defined all of he HTML and CSS that you'll need so that you can just focus on the JavaScript!
+We've left enough comments to get you started, though, and we've defined all of the HTML and CSS that you'll need so that you can just focus on the JavaScript!
 
 Remember to reload the page after updating and saving the file. You've got this!
 
@@ -74,3 +74,5 @@ Good luck!
 
 - [window.requestAnimationFrame()](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame)
 - [setInterval()](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval)
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/javascript-rock-dodger'>Rock Dodger</a> on Learn.co and start learning to code for free.</p>
