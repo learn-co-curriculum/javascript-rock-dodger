@@ -1,6 +1,6 @@
 tags:
-  - javascript
+  - bundler
+  - introduction
 languages:
-  - javascript
-resources:
-  - 1
+  - ruby
+resources: 2

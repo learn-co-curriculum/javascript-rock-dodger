@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
     <title>Rock Dodger!</title>
-    <link rel="stylesheet" type="text/css" href="node_modules/mocha/mocha.css">
+    <meta name="description" content="DOM manipulation with Rock Dodger in the Learn.co curriculum">
+    <meta name="author" content="Flatiron School">
     <link rel="stylesheet" type="text/css" href="index.css">
+    <!-- Include Mocha's stylesheet to style test results -->
+    <link rel="stylesheet" href="node_modules/mocha/mocha.css">
+    <script src="index.js"></script>
   </head>
 
   <body>
@@ -11,13 +16,27 @@
       <a id="start" href="javascript:start()">START</a>
       <div id="dodger" style="bottom: 0px; left: 180px;"></div>
     </div>
-    <script src="index.js"></script>
 
-    <!-- Open this file and call `mocha.run()` in console to run tests -->
-    <div id="mocha"></div>
-    <script src="node_modules/mocha/mocha.js"></script>
-    <script src="node_modules/expect/umd/expect.min.js"></script>
-    <script>mocha.setup('bdd');</script>
-    <script src="test/index-test.js"></script>
+  <!-- <div> for Mocha to display test results. -->
+  <div id="mocha"></div>
+
+  <!-- Include Mocha and set it up for BDD-style testing. -->
+  <script src="node_modules/mocha/mocha.js"></script>
+  <script>mocha.setup('bdd');</script>
+
+  <!-- Include Chai as the matcher library. -->
+  <script src="node_modules/chai/chai.js"></script>
+
+  <!-- Include Sinon as the library for spies, stubs, and mocks. -->
+  <script src="node_modules/sinon/pkg/sinon.js"></script>
+
+  <!-- Include the student's JavaScript file. -->
+  <script src="index.js"></script>
+
+  <!-- Include the JavaScript file containing the tests. -->
+  <script src="test/indexTest.js"></script>
+
+  <!-- Include Flatiron School's minified test runner to push results to Learn. -->
+  <script src="node_modules/learn-browser/learnBrowser.min.js"></script>
   </body>
 </html>
