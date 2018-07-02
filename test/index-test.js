@@ -165,13 +165,6 @@ describe('Rock Dodger', () => {
       }
     })
 
-    it('removes the "keydown" event listener', () => {
-      const spy = expect.spyOn(window, 'removeEventListener')
-
-      endGame()
-
-      expect(spy).toHaveBeenCalledWith('keydown', moveDodger)
-    })
   })
 
   describe('moveDodger(e)', () => {
