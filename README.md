@@ -10,15 +10,24 @@ JavaScript Rock Dodger
 
 ## Instructions
 
-You did it — you've made it to the end of the introductory JavaScript curriculum. You've learned how to write JavaScript and how to use JavaScript to manipulate the DOM. Now, only this lab stands between you and ~~freedom~~ the end of this course!
+You did it — you've made it to the end of the introductory JavaScript
+curriculum. You've learned how to write JavaScript and how to use JavaScript to
+manipulate the DOM. Now, only this lab stands between you and ~~freedom~~ the
+end of this course!
 
-So that we don't catch you off-guard, know that this project is meant to be difficult. We're really testing the limits of what we've learned so far. But know that we've solved the lab using only things that we've taught — well, mostly. There are two things (which we've partially implemented for you) that you should know about.
+So that we don't catch you off-guard, know that this project is meant to be
+difficult. We're really testing the limits of what we've learned so far. But
+know that we've solved the lab using only things that we've taught — well,
+mostly. There are two things (which we've partially implemented for you) that
+you should know about.
 
-### `window.requestAnimationFrame()`
+#### `window.requestAnimationFrame()`
 
-This function tells the browser that we want to animate some change on the page. We'll use it in this lab for animating the movement of rocks and the dodger.
+This function tells the browser that we want to animate some change on the page.
+We'll use it in this lab for animating the movement of rocks and the dodger.
 
-We can use [`window.requestAnimationFrame()`](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) by passing it a callback that contains our animation:
+We can use [`window.requestAnimationFrame()`][requestAnimation] by passing it a
+callback that contains our animation:
 
 ``` javascript
 function move(el) {
@@ -36,13 +45,22 @@ function move(el) {
 }
 ```
 
-If we call `move(el)` with a valid DOM element, `window.requestAnimationFrame()` will be called with the function `step`, which moves the `el` down the page in two-pixel increments until it's been moved 200 pixels. Pretty easy, right?
+If we call `move(el)` with a valid DOM element, `window.requestAnimationFrame()`
+will be called with the function `step`, which moves the `el` down the page in
+two-pixel increments until it's been moved 200 pixels. Pretty easy, right?
 
-(Note that we can pass `step` to `window.requestAnimationFrame()` _inside_ of `step`. This is a nifty feature of JavaScript (and other languages) called [_recursion_](https://en.wikipedia.org/wiki/Recursion_(computer_science)). Don't worry if this concept makes your head spin a bit — that feeling is normal. For now, know that we can use `window.requestAnimationFrame()` as demonstrated above.)
+(Note that we can pass `step` to `window.requestAnimationFrame()` _inside_ of
+`step`. This is a nifty feature of JavaScript (and other languages) called
+[_recursion_](https://en.wikipedia.org/wiki/Recursion_(computer_science)). Don't
+worry if this concept makes your head spin a bit — that feeling is normal. For
+now, know that we can use `window.requestAnimationFrame()` as demonstrated
+above.)
 
-### `setInterval()`
+#### `setInterval()`
 
-[`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) takes two arguments: a callback, and an interval in milliseconds. We can use it like so:
+[`setInterval()`][setInterval]
+takes two arguments: a callback, and an interval in milliseconds. We can use it
+like so:
 
 ``` javascript
 function sayHello() {
@@ -54,17 +72,23 @@ const myInterval = setInterval(sayHello, 1000)
 
 The above will print `'hello'` to console once every second.
 
-Note that `setInterval()` returns a reference to the interval. We can stop the interval from executing by calling `clearInterval(myInterval)`.
+Note that `setInterval()` returns a reference to the interval. We can stop the
+interval from executing by calling `clearInterval(myInterval)`.
 
-### Getting Started
+#### Getting Started
 
-Open up `index.html` in your browser. You should see a black 400-by-400px box with a white square at the bottom. That square is the dodger — it can only move left and right.
+Open up `index.html` in your browser. You should see a black 400-by-400px box
+with a white square at the bottom. That square is the dodger — it can only move
+left and right.
 
-Well, it _should_ be able to move only left and right — we'll need to implement that functionality!
+Well, it _should_ be able to move only left and right — we'll need to implement
+that functionality!
 
-Now open `index.js`. You'll see that we've defined a few functions for you, but we've left much of the file blank.
+Now open `index.js`. You'll see that we've defined a few functions for you, but
+we've left much of the file blank.
 
-We've left enough comments to get you started, though, and we've defined all of the HTML and CSS that you'll need so that you can just focus on the JavaScript!
+We've left enough comments to get you started, though, and we've defined all of
+the HTML and CSS that you'll need so that you can just focus on the JavaScript!
 
 Remember to reload the page after updating and saving the file. You've got this!
 
@@ -76,3 +100,6 @@ Good luck!
 - [setInterval()](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval)
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/javascript-rock-dodger'>Rock Dodger</a> on Learn.co and start learning to code for free.</p>
+
+[requestAnimation]: https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
+[setInterval]: https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval
