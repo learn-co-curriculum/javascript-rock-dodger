@@ -9,12 +9,14 @@ describe('Rock Dodger', () => {
      */
     describe('rock is <= 360px from the top of GAME', () => {
       it('does not collide', () => {
-        const rock = document.createElement('div')
+        let rock = document.createElement('div')
         rock.className = 'rock'
         rock.style.top = '2px'
         rock.style.left = '0px'
 
         expect(checkCollision(rock)).toNotBe(true)
+
+        rock = null
       })
     })
 
@@ -25,6 +27,10 @@ describe('Rock Dodger', () => {
         rock = document.createElement('div')
         rock.className = 'rock'
         rock.style.top = '362px'
+      })
+
+      afterEach(() => {
+        rock = null
       })
 
       it('does not collide if not within DODGER\'s bounds', () => {
@@ -54,12 +60,22 @@ describe('Rock Dodger', () => {
   })
 
   describe('createRock(x)', () => {
-    let rock
-
+    let rock, spy
     beforeEach(() => {
-      window.requestAnimationFrame = expect.createSpy()
+      // this slight hack lets us run the tests both
+      // in the browser and in jsdom
+      if (typeof window.requestAnimationFrame !== 'undefined') {
+        spy = expect.spyOn(window, 'requestAnimationFrame')
+      } else {
+        spy = window.requestAnimationFrame = expect.createSpy()
+      }
 
       rock = createRock(2)
+    })
+
+    afterEach(() => {
+      rock = null
+      spy = null
     })
 
     it('creates a rock with a given `style.left` value', () => {
@@ -67,7 +83,7 @@ describe('Rock Dodger', () => {
     })
 
     it('calls window.requestAnimationFrame()', () => {
-      expect(window.requestAnimationFrame).toHaveBeenCalled()
+      expect(spy).toHaveBeenCalled()
     })
 
     describe('moveRock()', () => {
@@ -249,7 +265,7 @@ describe('Rock Dodger', () => {
 
         moveDodger(e)
 
-        expect(spy).toHaveBeenCalled
+        expect(spy).toHaveBeenCalled()
       })
 
       it('calls moveDodgerRight()', () => {
