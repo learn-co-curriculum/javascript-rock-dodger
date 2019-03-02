@@ -44,7 +44,7 @@ function checkCollision(rock) {
                * 2. The rock's left edge is > the DODGER's left edge,
                *    and the rock's right edge is < the DODGER's right edge;
                * 3. The rock's left edge is < the DODGER's right edge,
-               *    and the rock's right edge is > the DODGER's right edge
+               *    and the rock's right edge is > the DODGER's right edge.
                */) {
       return true
     }
@@ -77,7 +77,7 @@ function createRock(x) {
     // (use the comments below to guide you!)
     /**
      * If a rock collides with the DODGER,
-     * we should call endGame()
+     * we should call endGame().
      */
 
     /**
@@ -87,17 +87,17 @@ function createRock(x) {
 
     /**
      * But if the rock *has* reached the bottom of the GAME,
-     * we should remove the rock from the DOM
+     * we should remove the rock from the DOM.
      */
   }
 
-  // We should kick of the animation of the rock around here
+  // We should kick off the animation of the rock around here.
 
   // Add the rock to ROCKS so that we can remove all rocks
-  // when there's a collision
+  // when there's a collision.
   ROCKS.push(rock)
 
-  // Finally, return the rock element you've created
+  // Finally, return the rock element you've created.
   return rock
 }
 
